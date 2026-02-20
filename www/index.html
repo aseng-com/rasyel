@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquran Rasyel - Profesional</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Running Text Profesional */
+        .marquee-bar {
+            background: var(--primary);
+            color: white;
+            padding: 6px 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Menu Home yang Elegan */
+        .main-menu-container {
+            padding: 2rem 1rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-card:active { transform: scale(0.95); }
+
+        .menu-card .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        /* Quran List & Reader */
+        .page-header {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 0 0 24px 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .surah-item {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+            border: 1px solid transparent;
+        }
+
+        .surah-item:active { border-color: var(--primary); }
+
+        .nomor-surah {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .font-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            direction: rtl;
+            color: #111;
+        }
+
+        /* Reader Content */
+        .ayat-box {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        /* Utilities */
+        .app-page { display: none; min-height: 100vh; padding-bottom: 40px; }
+        .app-page.active { display: block; }
+        .text-muted { color: var(--text-light) !important; }
+
+        #splash {
+            position: fixed; inset: 0; background: white;
+            z-index: 9999; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="splash">
+        <div class="icon-box animate__animated animate__bounceIn mb-3">
+            <i class="bi bi-book-half text-success" style="font-size: 4rem;"></i>
+        </div>
+        <h2 class="fw-bold">Alquran <span class="text-success">Rasyel</span></h2>
+    </div>
+
+    <div class="marquee-bar">
+        <marquee>Selamat Datang di Alquran Rasyel Profesional • Versi 3.0 Light Mode • Tingkatkan ibadah Anda setiap hari • Fitur Audio tersedia di setiap ayat • Build with Passion.</marquee>
+    </div>
+
+    <section id="page-home" class="app-page active animate__animated animate__fadeIn">
+        <div class="container main-menu-container">
+            <div class="mb-5 mt-2">
+                <h6 class="text-muted mb-1">Assalamualaikum,</h6>
+                <h3 class="fw-bold">Alquran <span class="text-success">Rasyel</span></h3>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-card" onclick="navigateTo('quran')">
+                    <div class="icon-box"><i class="bi bi-journal-richtext"></i></div>
+                    <span class="fw-bold">Al-Quran</span>
+                </div>
+                <div class="menu-card" onclick="navigateTo('doa')">
+                    <div class="icon-box"><i class="bi bi-hands"></i></div>
+                    <span class="fw-bold">Doa Harian</span>
+                </div>
+                <div class="menu-card" onclick="navigateTo('settings')">
+                    <div class="icon-box"><i class="bi bi-gear-wide-connected"></i></div>
+                    <span class="fw-bold">Setting</span>
+                </div>
+                <div class="menu-card" onclick="alert('Fitur segera hadir!')">
+                    <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+                    <span class="fw-bold">Kiblat</span>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="p-4 bg-success rounded-4 text-white shadow-lg">
+                    <h5 class="fw-bold"><i class="bi bi-quote me-2"></i>Ayat Hari Ini</h5>
+                    <p class="small opacity-75 mb-0 italic">"Maka nikmat Tuhanmu yang manakah yang kamu dustakan?" (Ar-Rahman: 13)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-quran" class="app-page animate__animated animate__fadeIn">
+        <div class="page-header">
+            <div class="d-flex align-items-center mb-3">
+                <button class="btn btn-light rounded-circle me-3" onclick="handleBack()"><i class="bi bi-arrow-left"></i></button>
+                <h4 class="fw-bold mb-0">Daftar Surah</h4>
+            </div>
+            <div class="input-group bg-light rounded-3">
+                <span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control bg-transparent border-0" id="quranSearch" placeholder="Cari Surah...">
+            </div>
+        </div>
+        <div class="container" id="quran-list"></div>
+    </section>
+
+    <section id="page-reader" class="app-page animate__animated animate__fadeIn">
+        <div class="page-header d-flex align-items-center">
+            <button class="btn btn-light rounded-circle me-3" onclick="handleBack()"><i class="bi bi-arrow-left"></i></button>
+            <div>
+                <h5 class="fw-bold mb-0" id="reader-title">Nama Surah</h5>
+                <small class="text-muted" id="reader-subtitle">Subtitle</small>
+            </div>
+        </div>
+        <div class="container mt-3" id="reader-content"></div>
+    </section>
+
+    <section id="page-doa" class="app-page animate__animated animate__fadeIn">
+        <div class="page-header d-flex align-items-center">
+            <button class="btn btn-light rounded-circle me-3" onclick="handleBack()"><i class="bi bi-arrow-left"></i></button>
+            <h4 class="fw-bold mb-0">Doa Harian</h4>
+        </div>
+        <div class="container" id="doa-list"></div>
+    </section>
+
+    <section id="page-settings" class="app-page animate__animated animate__fadeIn">
+        <div class="page-header d-flex align-items-center">
+            <button class="btn btn-light rounded-circle me-3" onclick="handleBack()"><i class="bi bi-arrow-left"></i></button>
+            <h4 class="fw-bold mb-0">Pengaturan</h4>
+        </div>
+        <div class="container mt-3">
+            <div class="ayat-box">
+                <label class="form-label fw-bold">Ukuran Font Arab</label>
+                <input type="range" class="form-range" min="1.5" max="3.5" step="0.1" id="fontSlider" oninput="updateFont(this.value)">
+                <div class="text-center p-3 bg-light rounded-3 mt-3 font-arabic" id="font-preview" style="font-size: 2rem;">
+                    بِسْمِ اللَّهِ
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let surahData = [];
+        let doaData = [];
+        let activeAudio = null;
+        let currentPage = 'home';
+
+        // --- NAVIGATION ENGINE ---
+        function navigateTo(pageId) {
+            currentPage = pageId;
+            document.querySelectorAll('.app-page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            
+            // Push state untuk handling tombol back android
+            history.pushState({page: pageId}, "", "#" + pageId);
+            window.scrollTo(0,0);
+        }
+
+        // Handle Back Button (Android & Browser)
+        window.onpopstate = function(event) {
+            if (event.state && event.state.page) {
+                // Sembunyikan semua, nyalakan yang ada di state
+                document.querySelectorAll('.app-page').forEach(p => p.classList.remove('active'));
+                document.getElementById('page-' + event.state.page).classList.add('active');
+                currentPage = event.state.page;
+            } else {
+                // Kembali ke home jika tidak ada state
+                navigateTo('home');
+            }
+        };
+
+        function handleBack() {
+            window.history.back();
+            if(activeAudio) activeAudio.pause();
+        }
+
+        // --- FETCH & RENDER ---
+        async function init() {
+            try {
+                const [sq, sd] = await Promise.all([
+                    fetch('https://open-api.my.id/api/quran/surah'),
+                    fetch('https://open-api.my.id/api/doa')
+                ]);
+                surahData = await sq.json();
+                doaData = await sd.json();
+                
+                renderSurahList(surahData);
+                renderDoa(doaData);
+                
+                setTimeout(() => {
+                    document.getElementById('splash').classList.add('animate__animated', 'animate__fadeOut');
+                    setTimeout(() => document.getElementById('splash').style.display = 'none', 500);
+                }, 1500);
+
+                // Initial history state
+                history.replaceState({page: 'home'}, "", "#home");
+            } catch (err) { alert("Periksa koneksi internet Anda."); }
+        }
+
+        function renderSurahList(data) {
+            const list = document.getElementById('quran-list');
+            list.innerHTML = data.map(s => `
+                <div class="surah-item" onclick="openReader(${s.nomor})">
+                    <div class="nomor-surah">${s.nomor}</div>
+                    <div class="flex-grow-1">
+                        <h6 class="fw-bold mb-0">${s.nama_latin}</h6>
+                        <small class="text-muted">${s.arti} • ${s.jumlah_ayat} Ayat</small>
+                    </div>
+                    <div class="font-arabic" style="font-size: 1.2rem; color: var(--primary)">${s.nama}</div>
+                </div>
+            `).join('');
+        }
+
+        async function openReader(no) {
+            navigateTo('reader');
+            const container = document.getElementById('reader-content');
+            container.innerHTML = '<div class="text-center p-5"><div class="spinner-border text-success"></div></div>';
+            
+            const res = await fetch(`https://open-api.my.id/api/quran/surah/${no}`);
+            const data = await res.json();
+            
+            document.getElementById('reader-title').innerText = data.nama_latin;
+            document.getElementById('reader-subtitle').innerText = `${data.arti} • ${data.jumlah_ayat} Ayat`;
+            
+            container.innerHTML = data.ayat.map(a => `
+                <div class="ayat-box animate__animated animate__fadeInUp">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <span class="badge bg-light text-dark border">${a.nomor}</span>
+                        <button class="btn-play shadow-sm" onclick="playAyah('${a.audio}', this)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </div>
+                    <h2 class="font-arabic text-end mb-4" style="font-size: var(--ar-size, 2rem)">${a.ar}</h2>
+                    <p class="text-success small fw-bold mb-1">${a.tr}</p>
+                    <p class="text-muted small mb-0 lh-lg">${a.idn}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderDoa(data) {
+            const list = document.getElementById('doa-list');
+            list.innerHTML = data.map(d => `
+                <div class="ayat-box">
+                    <h6 class="fw-bold text-success mb-3"><i class="bi bi-stars me-2"></i>${d.judul}</h6>
+                    <h3 class="font-arabic text-end mb-3" style="font-size: 1.5rem">${d.arab}</h3>
+                    <p class="small text-muted mb-0"><em>"${d.terjemah}"</em></p>
+                </div>
+            `).join('');
+        }
+
+        function playAyah(url, btn) {
+            if(activeAudio) {
+                activeAudio.pause();
+                document.querySelectorAll('.btn-play').forEach(b => b.innerHTML = '<i class="bi bi-play-fill"></i>');
+            }
+            activeAudio = new Audio(url);
+            activeAudio.play();
+            btn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+            activeAudio.onended = () => btn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        }
+
+        function updateFont(val) {
+            document.documentElement.style.setProperty('--ar-size', val + 'rem');
+            document.getElementById('font-preview').style.fontSize = val + 'rem';
+        }
+
+        document.getElementById('quranSearch').addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            renderSurahList(surahData.filter(s => s.nama_latin.toLowerCase().includes(val)));
+        });
+
+        init();
+    </script>
+</body>
+</html>
